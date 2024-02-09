@@ -1,6 +1,7 @@
 import path from 'node:path';
 import { defineConfig } from 'vite';
 import vue from '@vitejs/plugin-vue';
+import Unocss from 'unocss/vite';
 
 import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
@@ -14,5 +15,10 @@ export default defineConfig({
     },
   },
 
-  plugins: [vue()],
+  plugins: [
+    vue(),
+
+    // https://github.com/unocss/unocss
+    Unocss(),
+  ],
 });

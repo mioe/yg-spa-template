@@ -3,6 +3,9 @@ import HelloWorld from '~/components/HelloWorld.vue';
 </script>
 
 <template>
+  <div class="i-yg:deno h-[48px] w-[48px]" />
+  <div class="i-yg:fastify h-[48px] w-[48px] c-red-600" />
+
   <div>
     <a
       href="https://vitejs.dev"
