@@ -1,23 +1,23 @@
 module.exports = {
-  'env': {
-    'browser': true,
-    'es2021': true,
+  env: {
+    browser: true,
+    es2021: true,
   },
-  'extends': [
+  extends: [
     'eslint:recommended',
     'plugin:@typescript-eslint/recommended',
     'plugin:vue/vue3-recommended',
   ],
-  'overrides': [
+  overrides: [
     {
-      'env': {
-        'node': true,
+      env: {
+        node: true,
       },
-      'files': [
+      files: [
         '.eslintrc.{js,cjs}',
       ],
-      'parserOptions': {
-        'sourceType': 'script',
+      parserOptions: {
+        sourceType: 'script',
       },
     },
     {
@@ -30,21 +30,21 @@ module.exports = {
         'vue/multi-word-component-names': 'off',
         'vue/require-default-prop': 'off',
         'vue/html-indent': ['error', 2, {
-          'attribute': 1,
-          'baseIndent': 1,
-          'closeBracket': 0,
-          'alignAttributesVertically': true,
-          'ignores': [],
+          attribute: 1,
+          baseIndent: 1,
+          closeBracket: 0,
+          alignAttributesVertically: true,
+          ignores: [],
         }],
       },
     },
   ],
-  'parserOptions': {
-    'ecmaVersion': 'latest',
-    'parser': '@typescript-eslint/parser',
-    'sourceType': 'module',
+  parserOptions: {
+    ecmaVersion: 'latest',
+    parser: '@typescript-eslint/parser',
+    sourceType: 'module',
   },
-  'plugins': [
+  plugins: [
     '@stylistic',
     '@typescript-eslint',
     'vue',
@@ -66,9 +66,10 @@ module.exports = {
     '!.vitepress',
     '!.vscode',
   ],
-  'rules': {
+  rules: {
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
     '@stylistic/indent': ['error', 2],
+    '@stylistic/quote-props': ['error', 'as-needed'],
     '@stylistic/quotes': ['error', 'single'],
     '@stylistic/semi': ['error', 'always'],
     '@stylistic/space-before-function-paren': ['error', 'never'],
