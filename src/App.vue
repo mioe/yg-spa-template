@@ -9,7 +9,7 @@ const {
   decrement,
 } = appStore;
 
-const storageValue = useStorage('');
+const storageValue = useStorage('test', '');
 
 async function toggleLocales() {
   const locales = availableLocales;
