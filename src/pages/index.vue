@@ -1,3 +1,13 @@
+<script setup lang="ts">
+import HelloWorld from '~/components/HelloWorld.vue';
+</script>
+
 <template>
-  <p>index</p>
+  <h1>index.vue</h1>
+  <HelloWorld
+    world="world"
+  />
+  <button>Hello, World!</button>
+  <div class="i-yg:deno h-[48px] w-[48px]" />
+  <div class="i-yg:fastify h-[48px] w-[48px] c-red-600" />
 </template>

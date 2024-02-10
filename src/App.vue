@@ -1,18 +1,73 @@
+<script setup lang="ts">
+import { availableLocales, loadLanguageAsync } from '~/modules/vue-i18n';
+
+const { locale } = useI18n();
+
+const appStore = useAppStore();
+const {
+  increment,
+  decrement,
+} = appStore;
+
+const storageValue = useStorage('');
+
+async function toggleLocales() {
+  const locales = availableLocales;
+  const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length];
+  await loadLanguageAsync(newLocale);
+  locale.value = newLocale;
+}
+
+useHead({
+  title: 'My awesome site',
+});
+</script>
+
 <template>
+  <header class="flex gap-[16px] p-[8px]">
+    <RouterLink
+      :to="{ name: 'index' }"
+    >
+      index
+    </RouterLink>
+    <RouterLink
+      :to="{ name: 'test' }"
+    >
+      test
+    </RouterLink>
+    <RouterLink
+      :to="{ name: 'id', params: { id: 123 } }"
+    >
+      123
+    </RouterLink>
+  </header>
+
+  <div class="p-[8px]">
+    <p>i18n test</p>
+    <p>hello: {{ $t('hello') }}</p>
+    <button @click="toggleLocales">
+      toggleLocales: {{ locale }}
+    </button>
+  </div>
+
+  <div class="p-[8px]">
+    <p>@vueuse test</p>
+    <input
+      v-model="storageValue"
+      type="text"
+    >
+  </div>
+
+  <div class="p-[8px]">
+    <p>PINIA test</p>
+    <p>count: {{ appStore.count }}</p>
+    <button @click="increment">
+      +
+    </button>
+    <button @click="decrement">
+      -
+    </button>
+  </div>
+
   <RouterView />
 </template>
-
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
