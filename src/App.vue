@@ -18,6 +18,8 @@ async function toggleLocales() {
   locale.value = newLocale;
 }
 
+const testComposables = useMoneyFormat(100.45);
+
 useHead({
   title: 'My awesome site',
 });
@@ -41,6 +43,10 @@ useHead({
       123
     </RouterLink>
   </header>
+
+  <div class="p-[8px]">
+    testComposables: {{ testComposables }}
+  </div>
 
   <div class="p-[8px]">
     <p>i18n test</p>
