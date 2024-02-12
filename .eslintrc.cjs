@@ -40,6 +40,9 @@ module.exports = {
           alignAttributesVertically: true,
           ignores: [],
         }],
+        'vue/block-order': ['error', {
+          order: [ 'script', 'template', 'style' ],
+        }],
       },
     },
   ],
