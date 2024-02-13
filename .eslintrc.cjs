@@ -1,3 +1,8 @@
+/**
+ * Общие правила для SPA приложений команд Yourgoods
+ * список необходимых пакетов:
+ * npm install -D @stylistic/eslint-plugin @typescript-eslint/eslint-plugin @typescript-eslint/parser @unocss/eslint-config eslint eslint-plugin-vue
+ */
 module.exports = {
   env: {
     browser: true,
@@ -29,8 +34,6 @@ module.exports = {
         parser: '@typescript-eslint/parser',
       },
       rules: {
-        'no-undef': 'off',
-        'no-unused-vars': 'off',
         'vue/block-order': ['error', { order: [ 'script', 'template', 'style' ] }],
         'vue/component-api-style': ['error', ['script-setup']],
         'vue/component-name-in-template-casing': ['error', 'PascalCase', { registeredComponentsOnly: false }],
@@ -78,14 +81,38 @@ module.exports = {
     '!.vscode',
   ],
   rules: {
-    '@typescript-eslint/ban-ts-comment': 'off',
-    '@typescript-eslint/no-explicit-any': 'off',
-    '@typescript-eslint/no-unused-vars': 'off',
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
     '@stylistic/indent': ['error', 2],
     '@stylistic/quote-props': ['error', 'as-needed'],
     '@stylistic/quotes': ['error', 'single'],
     '@stylistic/semi': ['error', 'always'],
     '@stylistic/space-before-function-paren': ['error', 'never'],
+    '@typescript-eslint/array-type': ['error', { default: 'array' }],
+    '@typescript-eslint/ban-ts-comment': 'off',
+    '@typescript-eslint/ban-types': 'error',
+    '@typescript-eslint/consistent-generic-constructors': ['error', 'constructor'],
+    '@typescript-eslint/consistent-type-assertions': ['error', { assertionStyle: 'as', objectLiteralTypeAssertions: 'allow' }],
+    '@typescript-eslint/consistent-type-definitions': ['error', 'interface'],
+    // '@typescript-eslint/consistent-type-exports': ['error', { fixMixedExportsWithInlineTypeSpecifier: false }],
+    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports', disallowTypeAnnotations: true, fixStyle: 'separate-type-imports' }],
+    '@typescript-eslint/no-confusing-non-null-assertion': 'error',
+    '@typescript-eslint/no-explicit-any': 'off',
+    '@typescript-eslint/no-inferrable-types': ['error', { ignoreParameters: false, ignoreProperties: false }],
+    '@typescript-eslint/no-non-null-asserted-nullish-coalescing': 'error',
+    '@typescript-eslint/no-non-null-asserted-optional-chain': 'error',
+    // '@typescript-eslint/no-redundant-type-constituents': 'error',
+    // '@typescript-eslint/no-unnecessary-boolean-literal-compare': 'error',
+    // '@typescript-eslint/no-unnecessary-type-arguments': 'error',
+    // '@typescript-eslint/no-unnecessary-type-assertion': 'error',
+    // '@typescript-eslint/no-unnecessary-type-constraint': 'error',
+    '@typescript-eslint/no-unused-vars': ['error', { args: 'all', argsIgnorePattern: '^_' }],
+    '@typescript-eslint/prefer-for-of': 'error',
+    // '@typescript-eslint/prefer-optional-chain': 'error',
+    // '@typescript-eslint/prefer-reduce-type-parameter': 'error',
+    '@typescript-eslint/prefer-ts-expect-error': 'error',
+    // '@typescript-eslint/return-await': ['error', 'in-try-catch'],
+    'no-return-await': 'off',
+    'no-undef': 'off',
+    'no-unused-vars': 'off',
   },
 };
