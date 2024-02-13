@@ -61,7 +61,7 @@ useHead({
     <input
       v-model="storageValue"
       type="text"
-    >
+    />
   </div>
 
   <div class="p-[8px]">
