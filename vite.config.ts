@@ -1,13 +1,13 @@
 import path from 'node:path';
-import { defineConfig } from 'vite';
+import { fileURLToPath } from 'url';
+import VueI18n from '@intlify/unplugin-vue-i18n/vite';
+import { unheadVueComposablesImports } from '@unhead/vue';
 import vue from '@vitejs/plugin-vue';
 import Unocss from 'unocss/vite';
-import Pages from 'vite-plugin-pages';
-import VueI18n from '@intlify/unplugin-vue-i18n/vite';
 import AutoImport from 'unplugin-auto-import/vite';
-import { unheadVueComposablesImports } from '@unhead/vue';
+import { defineConfig } from 'vite';
+import Pages from 'vite-plugin-pages';
 
-import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 

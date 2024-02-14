@@ -63,6 +63,7 @@ module.exports = {
   plugins: [
     '@stylistic',
     '@typescript-eslint',
+    'import',
     'vue',
   ],
   ignorePatterns: [
@@ -83,6 +84,15 @@ module.exports = {
     '!.vscode',
   ],
   rules: {
+    'import/order': [
+      'error',
+      {
+        pathGroups: [{ pattern: '~/**', group: 'internal' }],
+        groups: ['builtin', 'external', 'internal'],
+        alphabetize: { order: 'asc', orderImportKind: 'desc', caseInsensitive: true },
+      },
+    ],
+
     '@stylistic/comma-dangle': ['error', 'always-multiline'],
     '@stylistic/indent': ['error', 2],
     '@stylistic/quote-props': ['error', 'as-needed'],
