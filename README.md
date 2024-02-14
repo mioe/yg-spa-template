@@ -5,3 +5,44 @@
 - классы, интерфейсы, типы и название компонентов в `PascalCase`, например: `interface TgStepState`, `<RouterLink />`
 - экземпляры классов, переменные, название функций в `camelCase`, например: `const tgStepState = new TgStepState()`, `const isLoading = ref(false)`, `useAuthStore()`
 - название i18n ключей, классы стилей и название страниц в `kebab-case`, например: `create-chatbot: Создать чатбота`, `class="yg-button yg-primary yg-rounded-xl"` (если хотите выразить вложения используйте бэм: `yg-button--right-icon`, `yg-card--header--main-title`), `pages/auth/user-info.vue`
+
+### Интеграция eslint-а с IDE
+Чтобы `eslint` работал как условный форматор аля `prettier`, нужно чтобы IDE после сохранения файла запускала команду для форматирования на основе установленных правил
+> Объяснение почему нам не нужен prettier: https://antfu.me/posts/why-not-prettier
+
+#### VSCode
+С настройках редактора добавляем такие строки:
+```json
+  // Disable the default formatter, use eslint instead
+  "prettier.enable": false,
+  "editor.formatOnSave": false,
+
+  // Auto fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "explicit",
+    "source.organizeImports": "never"
+  },
+}
+```
+
+#### WebStorm
+В WebStorm необходимо перейти в соответствующий раздел настроек и, используя графический интерфейс, указать настройки: `Preferences → Languages & Frameworks → JavaScript → Code Quality Tools → ESLint`.
+
+![screenshot](https://habrastorage.org/r/w1560/getpro/habr/upload_files/76e/919/f0f/76e919f0f3d4abbd3d87c6dadd88141c.png)
+
+### Рекомендации по расширениям для VSCode
+Обязательный:
+| Название | Описание |
+| --- | --- |
+| [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) | Актуальный помощник в работе с Vue3 |
+| [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) | Обработка особого синтекста во вью файлах, так же нужно его настроить по этому [гайду](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode) |
+| [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) | Локальное форматирование файлов по нужную кодировку |
+| [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | Помощник в написании кода в едином стиле |
+| [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) | Подсказки при написании классов |
+
+Опциональные:
+| Название | Описание |
+| --- | --- |
+| [i18y Ally](https://marketplace.visualstudio.com/items?itemName=Lokalise.i18n-ally) | Для работы с мультиязычностью, показывает вместо переменных сразу значение и собирает все упущенные ключи из коллекций словаря |
+| [change-case](https://marketplace.visualstudio.com/items?itemName=wmaurer.change-case) | Очень простое расширения для быстрого форматирование выделенного текста |
+| [Code Spell Checker](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker) + [Russian Pack](https://marketplace.visualstudio.com/items?itemName=streetsidesoftware.code-spell-checker-russian) | Грамматика в IDE |
