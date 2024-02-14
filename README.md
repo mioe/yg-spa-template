@@ -12,7 +12,8 @@
 
 #### VSCode
 С настройках редактора добавляем такие строки:
-```json
+```js
+{
   // Disable the default formatter, use eslint instead
   "prettier.enable": false,
   "editor.formatOnSave": false,
