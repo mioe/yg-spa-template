@@ -8,6 +8,14 @@ tasks:
   - init: npm install
     command: npm run dev
 
+ports:
+  - port: 5173
+    onOpen: open-preview
+    name: yg-spa-template
+    description: vanilla project
+    visibility: public
+    protocol: http
+
 vscode:
   extensions:
     - antfu.unocss
