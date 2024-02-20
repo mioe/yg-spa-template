@@ -5,7 +5,23 @@
 # Learn more from ready-to-use templates: https://www.gitpod.io/docs/introduction/getting-started/quickstart
 
 tasks:
-  - init: npm install && npm run build
+  - init: npm install
     command: npm run dev
+
+ports:
+  - port: 5173
+    onOpen: open-preview
+    name: yg-spa-template
+    description: Hello world
+    visibility: public
+    protocol: https
+
+vscode:
+  extensions:
+    - antfu.unocss
+    - EditorConfig.EditorConfig
+    - dbaeumer.vscode-eslint
+    - Vue.volar
+    - Vue.vscode-typescript-vue-plugin
 
 
