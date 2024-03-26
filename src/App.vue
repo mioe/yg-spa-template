@@ -12,10 +12,7 @@ const { t: $t } = useI18n();
 
 const route = useRoute();
 
-const sidebar = reactive({
-  selected: 'home',
-  isOpened: false,
-});
+const sidebarIsOpen = ref(false);
 
 const sidebarSelected = computed(() => {
   switch (route.name) {
@@ -75,7 +72,7 @@ useHead({
       <nav class="inline-flex">
         <PButton
           size="x-small"
-          @click="sidebar.isOpened = !sidebar.isOpened"
+          @click="sidebarIsOpen = !sidebarIsOpen"
         >
           <IconBurgerSm />
         </PButton>
@@ -85,7 +82,7 @@ useHead({
     <main class="relative h-full flex flex-1">
       <aside class="sticky left-0 top-0 z-1 flex-shrink-0">
         <PSideBar
-          v-model:opened="sidebar.isOpened"
+          v-model:opened="sidebarIsOpen"
           v-model:selected="sidebarSelected"
           title="YG Started Template"
           production="sendbot"
