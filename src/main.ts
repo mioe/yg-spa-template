@@ -20,7 +20,7 @@ import { router } from './modules/vue-router';
 /**
  * init app
  */
-const app = createApp(App)
+createApp(App)
   .use(i18n)
   .use(head)
   .use(pinia)
