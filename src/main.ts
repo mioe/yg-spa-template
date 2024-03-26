@@ -26,7 +26,7 @@ const app = createApp(App)
   .use(pinia)
   .use(router)
   .use(ProfeatUI, {
-    theme: ColorsThemes.cornflower,
+    theme: ColorsThemes.pink,
   })
   .mount('#app');
 

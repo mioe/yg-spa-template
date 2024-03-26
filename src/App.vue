@@ -1,10 +1,12 @@
 <script setup lang="ts">
 import {
   PSideBar,
+  PButton,
   IconInfoSm,
   IconImageMd,
   IconWeekMd,
   IconCoffeeMd,
+  IconBurgerSm,
 } from '@profeat/ui-kit';
 const { t: $t } = useI18n();
 
@@ -68,19 +70,31 @@ useHead({
 </script>
 
 <template>
-  <main class="relative flex min-h-svh">
-    <aside class="static left-0 top-0 z-1 flex-shrink-0">
-      <PSideBar
-        v-model:opened="sidebar.isOpened"
-        v-model:selected="sidebarSelected"
-        mode="static"
-        title="YG"
-        production="sendbot"
-        :items="sidebarItems"
-      />
-    </aside>
-    <div class="flex-1 bg-gray-100">
-      <RouterView />
-    </div>
-  </main>
+  <div class="relative flex flex-col min-h-svh">
+    <header class="sticky left-0 top-0 w-full flex justify-center p-2 lg:hidden">
+      <nav class="inline-flex">
+        <PButton
+          size="x-small"
+          @click="sidebar.isOpened = !sidebar.isOpened"
+        >
+          <IconBurgerSm />
+        </PButton>
+      </nav>
+    </header>
+
+    <main class="relative h-full flex flex-1">
+      <aside class="sticky left-0 top-0 z-1 flex-shrink-0">
+        <PSideBar
+          v-model:opened="sidebar.isOpened"
+          v-model:selected="sidebarSelected"
+          title="YG Started Template"
+          production="sendbot"
+          :items="sidebarItems"
+        />
+      </aside>
+      <div class="flex-1 bg-gray-100">
+        <RouterView />
+      </div>
+    </main>
+  </div>
 </template>
