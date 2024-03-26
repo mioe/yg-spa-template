@@ -1,24 +1,66 @@
 <script setup lang="ts">
-import { availableLocales, loadLanguageAsync } from '~/modules/vue-i18n';
+import {
+  PSideBar,
+  IconInfoSm,
+  IconImageMd,
+  IconWeekMd,
+  IconCoffeeMd,
+} from '@profeat/ui-kit';
+const { t: $t } = useI18n();
 
-const { locale } = useI18n();
+const route = useRoute();
 
-const appStore = useAppStore();
-const {
-  increment,
-  decrement,
-} = appStore;
+const sidebar = reactive({
+  selected: 'home',
+  isOpened: false,
+});
 
-const storageValue = useStorage('test', '');
+const sidebarSelected = computed(() => {
+  switch (route.name) {
+    case 'index':
+      return 'home';
+    case 'entity-id':
+      return 'id';
 
-async function toggleLocales() {
-  const locales = availableLocales;
-  const newLocale = locales[(locales.indexOf(locale.value) + 1) % locales.length];
-  await loadLanguageAsync(newLocale);
-  locale.value = newLocale;
-}
+    default:
+      return 'not-found';
+  }
+});
 
-const testComposables = useMoneyFormat(100.45);
+const sidebarItems = computed(() => ({
+  menu: [
+    {
+      value: 'home',
+      icon: IconCoffeeMd,
+      text: $t('pages.home'),
+      disabled: false,
+      to: '/',
+    },
+    {
+      value: 'id',
+      icon: IconWeekMd,
+      text: $t('pages.dynamic-page'),
+      disabled: false,
+      to: '/entity/cc55170d-83c3-41a5-a90d-e69cc9a21b2b',
+    },
+    {
+      value: 'not-found',
+      icon: IconInfoSm,
+      text: $t('pages.p404'),
+      disabled: false,
+      to: '/dflpslpdf/sdflpsldpf/dfspdflp',
+    },
+  ],
+
+  bottom: [
+    {
+      icon: IconImageMd,
+      href: 'https://dev-ui.profeat.team/',
+      text: $t('pages.ui'),
+      target: '_blank',
+    },
+  ],
+}));
 
 useHead({
   title: 'My awesome site',
@@ -26,54 +68,19 @@ useHead({
 </script>
 
 <template>
-  <header class="flex gap-[16px] p-[8px]">
-    <RouterLink
-      :to="{ name: 'index' }"
-    >
-      index
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'test' }"
-    >
-      test
-    </RouterLink>
-    <RouterLink
-      :to="{ name: 'id', params: { id: 123 } }"
-    >
-      123
-    </RouterLink>
-  </header>
-
-  <div class="p-[8px]">
-    testComposables: {{ testComposables }}
-  </div>
-
-  <div class="p-[8px]">
-    <p>i18n test</p>
-    <p>hello: {{ $t('hello') }}</p>
-    <button @click="toggleLocales">
-      toggleLocales: {{ locale }}
-    </button>
-  </div>
-
-  <div class="p-[8px]">
-    <p>@vueuse test</p>
-    <input
-      v-model="storageValue"
-      type="text"
-    />
-  </div>
-
-  <div class="p-[8px]">
-    <p>PINIA test</p>
-    <p>count: {{ appStore.count }}</p>
-    <button @click="increment">
-      +
-    </button>
-    <button @click="decrement">
-      -
-    </button>
-  </div>
-
-  <RouterView />
+  <main class="relative flex min-h-svh">
+    <aside class="static left-0 top-0 z-1 flex-shrink-0">
+      <PSideBar
+        v-model:opened="sidebar.isOpened"
+        v-model:selected="sidebarSelected"
+        mode="static"
+        title="YG"
+        production="sendbot"
+        :items="sidebarItems"
+      />
+    </aside>
+    <div class="flex-1 bg-gray-100">
+      <RouterView />
+    </div>
+  </main>
 </template>

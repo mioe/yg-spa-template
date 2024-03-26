@@ -3,7 +3,6 @@
     "antfu.unocss",
     "EditorConfig.EditorConfig",
     "dbaeumer.vscode-eslint",
-    "Vue.volar",
-    "Vue.vscode-typescript-vue-plugin"
+    "Vue.volar"
   ]
 }

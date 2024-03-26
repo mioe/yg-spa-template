@@ -1,3 +1,4 @@
+import { ProfeatUI, ColorsThemes } from '@profeat/ui-kit';
 import { createApp } from 'vue';
 import App from './App.vue';
 
@@ -5,6 +6,7 @@ import App from './App.vue';
  * Styles
  */
 import 'uno.css';
+import '@profeat/ui-kit/style.css';
 import './style.css';
 
 /**
@@ -18,11 +20,14 @@ import { router } from './modules/vue-router';
 /**
  * init app
  */
-createApp(App)
+const app = createApp(App)
   .use(i18n)
   .use(head)
   .use(pinia)
   .use(router)
+  .use(ProfeatUI, {
+    theme: ColorsThemes.cornflower,
+  })
   .mount('#app');
 
 /**

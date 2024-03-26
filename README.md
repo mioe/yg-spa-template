@@ -35,8 +35,7 @@
 Обязательный:
 | Название | Описание |
 | --- | --- |
-| [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) | Актуальный помощник в работе с Vue3 |
-| [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin) | Обработка особого синтекста во вью файлах, так же нужно его настроить по этому [гайду](https://vuejs.org/guide/typescript/overview.html#volar-takeover-mode) |
+| [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) | Актуальный помощник в работе с Vue3 |
 | [EditorConfig](https://marketplace.visualstudio.com/items?itemName=EditorConfig.EditorConfig) | Локальное форматирование файлов по нужную кодировку |
 | [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint) | Помощник в написании кода в едином стиле |
 | [UnoCSS](https://marketplace.visualstudio.com/items?itemName=antfu.unocss) | Подсказки при написании классов |

@@ -14,6 +14,7 @@
     "lint:fix": "eslint . --fix"
   },
   "dependencies": {
+    "@profeat/ui-kit": "^0.0.123",
     "@unhead/vue": "^1.8.10",
     "@vueuse/core": "^10.7.2",
     "eslint-plugin-import": "^2.29.1",

@@ -6,7 +6,7 @@ const router = createRouter({
   history: createWebHistory(),
   routes: [
     ...routes,
-    { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
+    { path: '/:pathMatch(.*)*', name: 'not-found', component: NotFound },
   ],
   scrollBehavior(_to, _from, savedPosition) {
     if (savedPosition) {

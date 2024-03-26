@@ -1,1 +1,6 @@
-hello: 'hello'
+hello: 'Hello'
+pages:
+  home: 'Home'
+  dynamic-page: 'Dynamic page'
+  p404: '404'
+  ui: 'UI'
