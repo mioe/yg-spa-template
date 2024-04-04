@@ -3,9 +3,9 @@ import {
   PButton,
   IconBurgerSm,
 } from '@profeat/ui-kit';
-import Sidebar from '~/components/App/Sidebar.vue';
+import AppSidebar from '~/components/App/AppSidebar.vue';
 
-const sidebarRef = shallowRef<InstanceType<typeof Sidebar> | null>(null);
+const sidebarRef = shallowRef<InstanceType<typeof AppSidebar> | null>(null);
 
 function handleOpenSidebar() {
   sidebarRef.value?.open();
@@ -30,7 +30,7 @@ useHead({
     </header>
 
     <main class="relative h-full flex flex-1">
-      <Sidebar ref="sidebarRef" />
+      <AppSidebar ref="sidebarRef" />
       <div class="flex-1 bg-gray-100">
         <RouterView />
       </div>

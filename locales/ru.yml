@@ -2,5 +2,8 @@ hello: 'Привет'
 pages:
   home: 'Главная'
   dynamic-page: 'Динамическая страница'
+  demo:
+    title: 'Демо'
+    html: 'HTML'
   p404: '404'
   ui: 'UI'

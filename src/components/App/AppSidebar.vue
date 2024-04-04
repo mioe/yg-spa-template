@@ -5,6 +5,7 @@ import {
   IconImageMd,
   IconWeekMd,
   IconCoffeeMd,
+  IconBoxMd,
 } from '@profeat/ui-kit';
 
 const { t: $t } = useI18n();
@@ -17,7 +18,10 @@ const sidebarSelected = computed(() => {
       return 'home';
     case 'entity-id':
       return 'id';
-
+    case 'demo':
+      return 'demo';
+    case 'demo-html':
+      return 'demo';
     default:
       return 'not-found';
   }
@@ -37,6 +41,13 @@ const sidebarItems = computed(() => ({
       text: $t('pages.dynamic-page'),
       disabled: false,
       to: '/entity/cc55170d-83c3-41a5-a90d-e69cc9a21b2b',
+    },
+    {
+      value: 'demo',
+      icon: IconBoxMd,
+      text: $t('pages.demo.title'),
+      disabled: false,
+      to: '/demo/html',
     },
     {
       value: 'not-found',
@@ -67,7 +78,7 @@ defineExpose({
 </script>
 
 <template>
-  <aside class="sticky left-0 top-0 z-1 flex-shrink-0">
+  <aside class="sticky left-0 top-0 z-1 flex-shrink-0 max-h-svh">
     <PSideBar
       v-model:opened="sidebarIsOpen"
       v-model:selected="sidebarSelected"
