@@ -26,47 +26,6 @@ const sidebarSelected = computed(() => {
       return 'not-found';
   }
 });
-const sidebarItems = computed(() => ({
-  menu: [
-    {
-      value: 'home',
-      icon: IconCoffeeMd,
-      text: $t('pages.home'),
-      disabled: false,
-      to: '/',
-    },
-    {
-      value: 'id',
-      icon: IconWeekMd,
-      text: $t('pages.dynamic-page'),
-      disabled: false,
-      to: '/entity/cc55170d-83c3-41a5-a90d-e69cc9a21b2b',
-    },
-    {
-      value: 'demo',
-      icon: IconBoxMd,
-      text: $t('pages.demo.title'),
-      disabled: false,
-      to: '/demo/html',
-    },
-    {
-      value: 'not-found',
-      icon: IconInfoSm,
-      text: $t('pages.p404'),
-      disabled: false,
-      to: '/dflpslpdf/sdflpsldpf/dfspdflp',
-    },
-  ],
-
-  bottom: [
-    {
-      icon: IconImageMd,
-      href: 'https://dev-ui.profeat.team/',
-      text: $t('pages.ui'),
-      target: '_blank',
-    },
-  ],
-}));
 
 function open() {
   sidebarIsOpen.value = true;
@@ -84,7 +43,48 @@ defineExpose({
       v-model:selected="sidebarSelected"
       title="YG Started Template"
       production="sendbot"
-      :items="sidebarItems"
+      :items="{
+        menu: [
+          {
+            value: 'home',
+            icon: IconCoffeeMd,
+            text: $t('pages.home'),
+            disabled: false,
+            to: '/',
+          },
+          {
+            value: 'id',
+            icon: IconWeekMd,
+            text: $t('pages.dynamic-page'),
+            disabled: false,
+            to: '/entity/cc55170d-83c3-41a5-a90d-e69cc9a21b2b',
+          },
+          {
+            value: 'demo',
+            icon: IconBoxMd,
+            text: $t('pages.demo.title'),
+            disabled: false,
+            to: '/demo/html',
+          },
+          {
+            value: 'not-found',
+            icon: IconInfoSm,
+            text: $t('pages.p404'),
+            disabled: false,
+            to: '/dflpslpdf/sdflpsldpf/dfspdflp',
+          },
+        ],
+
+        bottom: [
+          {
+            value: 'nil',
+            icon: IconImageMd,
+            href: 'https://dev-ui.yourgood.app/',
+            text: $t('pages.ui'),
+            target: '_blank',
+          },
+        ],
+      }"
     />
   </aside>
 </template>
