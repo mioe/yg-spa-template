@@ -1,4 +1,5 @@
 # yg-spa-template
+> 🥑 Начальный шаблон для разработки SPA-приложений
 
 ### Договоренности по написанию кода
 https://www.notion.so/wip-Developer-style-guide-de3cb47243234fc9a736fd0f226bf96b

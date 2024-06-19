@@ -1,7 +1,7 @@
 /**
  * Общие правила для SPA приложений команд Yourgoods
  * список необходимых пакетов:
- * npm install -D @stylistic/eslint-plugin @typescript-eslint/eslint-plugin @typescript-eslint/parser @unocss/eslint-config eslint eslint-plugin-vue eslint-plugin-import
+ * npm install -D @stylistic/eslint-plugin @typescript-eslint/eslint-plugin @typescript-eslint/parser @unocss/eslint-config eslint@8 eslint-plugin-vue eslint-plugin-import
  */
 module.exports = {
   env: {
