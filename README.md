@@ -1,17 +1,14 @@
 # yg-spa-template
 
-### Форматирования переменных
-- константы и env-ы всегда именуем в стиле `CONSTANT_CASE`, например: `DEFAULT_PAGINATION_LIMIT`, `VITE_ADMIN_TOKEN`
-- классы, интерфейсы, типы и название компонентов в `PascalCase`, например: `interface TgStepState`, `<RouterLink />`
-- экземпляры классов, переменные, название функций в `camelCase`, например: `const tgStepState = new TgStepState()`, `const isLoading = ref(false)`, `useAuthStore()`
-- название i18n ключей, классы стилей и название страниц в `kebab-case`, например: `create-chatbot: Создать чатбота`, `class="yg-button yg-primary yg-rounded-xl"` (если хотите выразить вложения используйте бэм: `yg-button--right-icon`, `yg-card--header--main-title`), `pages/auth/user-info.vue`
+### Договоренности по написанию кода
+https://www.notion.so/wip-Developer-style-guide-de3cb47243234fc9a736fd0f226bf96b
 
 ### Интеграция eslint-а с IDE
 Чтобы `eslint` работал как условный форматор аля `prettier`, нужно чтобы IDE после сохранения файла запускала команду для форматирования на основе установленных правил
 > Объяснение почему нам не нужен prettier: https://antfu.me/posts/why-not-prettier
 
 #### VSCode
-С настройках редактора добавляем такие строки:
+В настройках редактора добавляем такие строки:
 ```js
 {
   // Disable the default formatter, use eslint instead
@@ -23,6 +20,20 @@
     "source.fixAll.eslint": "explicit",
     "source.organizeImports": "never"
   },
+}
+```
+
+### Zed
+В настройках редактора добавляем такие строки:
+```js
+{
+  "tab_size": 2,
+  "show_whitespaces": "all",
+  "formatter": {
+    "code_actions": {
+      "source.fixAll.eslint": true
+    }
+  }
 }
 ```
 
