@@ -10,6 +10,7 @@ import {
 
 const appStore = useAppStore()
 const { decrement, increment } = appStore
+const { locale } = useI18n()
 </script>
 
 <template>
@@ -48,6 +49,43 @@ const { decrement, increment } = appStore
       <PButtonFloating>
         PButtonFloating TEST
       </PButtonFloating>
+    </article>
+
+    <article>
+      <h2>test composables:</h2>
+
+      <div>
+        <p>{{ useBeautifulPhoneNumber('+79998887766') }}</p>
+        <p>{{ useBeautifulPhoneNumber('+389998887766') }}</p>
+      </div>
+    </article>
+
+    <article>
+      <h2>test import custom icon:</h2>
+
+      <div class="i-yg:vue h-[20px] w-[20px]" />
+    </article>
+
+    <article>
+      <h2>test vue-i18n:</h2>
+
+      <button
+        class="btn"
+        @click="locale = 'en'"
+      >
+        en
+      </button>
+
+      <button
+        class="btn"
+        @click="locale = 'ru'"
+      >
+        ru
+      </button>
+
+      <p>{{ $t('Привет') }}</p>
+      <p>{{ $t('Используем подход как у apple') }}</p>
+      <p>{{ $t('Ключом является дефолтная локаль') }}</p>
     </article>
   </div>
 </template>
