@@ -1,30 +1,22 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+const hello = import.meta.env.VITE_APP_HELLO
+console.log('🦕 hello', hello)
 </script>
 
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
-  </div>
-  <HelloWorld msg="Vite + Vue" />
-</template>
+  <header class="mx-auto my-[8px] max-w-[1024px] w-full flex flex-wrap gap-[24px] border border-gray-200 rounded-3xl p-[16px] text-blue underline underline-blue underline-dashed">
+    <RouterLink to="/">
+      Home
+    </RouterLink>
+    <RouterLink to="/vue-vite-example">
+      VueViteExample
+    </RouterLink>
+    <RouterLink to="/dkgoskosdkg">
+      ErrorPage
+    </RouterLink>
+  </header>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+  <div class="mx-auto max-w-[1024px] flex-1 p-[16px]">
+    <RouterView />
+  </div>
+</template>

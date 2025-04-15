@@ -1,5 +1,7 @@
+import { FileSystemIconLoader } from '@iconify/utils/lib/loader/node-loaders'
 import {
   defineConfig,
+  presetIcons,
   presetWind3,
 } from 'unocss'
 
@@ -13,5 +15,12 @@ export default defineConfig({
   ],
   presets: [
     presetWind3(),
+
+    presetIcons({
+      warn: true,
+      collections: {
+        yg: FileSystemIconLoader('./src/assets/icons'),
+      },
+    }),
   ],
 })

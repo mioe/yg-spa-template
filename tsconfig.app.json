@@ -11,6 +11,7 @@
     "noUncheckedSideEffectImports": true,
 
     /* > Custom */
+    "types": ["unplugin-vue-router/client"],
     "paths": {
       "~/*": ["./src/*"]
     }
